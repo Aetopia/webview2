@@ -1,0 +1,13 @@
+name: Schedule
+
+on:
+  schedule:
+    - cron: '20 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  call-job:
+    uses: ./.github/workflows/update.yml

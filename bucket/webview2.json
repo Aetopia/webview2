@@ -1,0 +1,36 @@
+{
+    "uninstaller":  {
+                        "script":  "reg.exe delete \"HKCU\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\" /f | Out-Null"
+                    },
+    "description":  "Provides a fully portable install of Microsoft Edge WebView2.",
+    "architecture":  {
+                         "64bit":  {
+                                       "hash":  "2778E98442B5C4D1B7480B5D8E1E06D65295C29D9FBFC43F13CBA2964C9DC093",
+                                       "url":  "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/2e79bd1d-6d3f-4ce5-b882-df132ab6c486/Microsoft.WebView2.FixedVersionRuntime.144.0.3719.82.x64.cab#/Microsoft.WebView2.FixedVersionRuntime.144.0.3719.82.x64.7z"
+                                   },
+                         "32bit":  {
+                                       "hash":  "BE28F8DAB2B8BD99033FE3B82E9E940BEC7FF8F84729E8DC12D5B163C3C20CFA",
+                                       "url":  "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/beb14cc8-3c1d-44ab-b98f-fd87f2bad469/Microsoft.WebView2.FixedVersionRuntime.144.0.3719.82.x86.cab#/Microsoft.WebView2.FixedVersionRuntime.144.0.3719.82.x86.7z"
+                                   },
+                         "arm64":  {
+                                       "hash":  "83DA6F1D7FD304C78617C32A7EDD2D581207F8A2AC212FEA7A0346A6D91813D6",
+                                       "url":  "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/c3bddd94-7783-4e69-8bd1-ab2de8e5380e/Microsoft.WebView2.FixedVersionRuntime.144.0.3719.82.arm64.cab#/Microsoft.WebView2.FixedVersionRuntime.144.0.3719.82.arm64.7z"
+                                   }
+                     },
+    "version":  "144.0.3719.82",
+    "notes":  [
+                  "To troubleshoot any issues, visit:",
+                  "https://github.com/Aetopia/scoop-webview2#troubleshooting"
+              ],
+    "license":  "Freeware",
+    "homepage":  "https://developer.microsoft.com/microsoft-edge/webview2",
+    "pre_install":  "if ($Global) { error; break }",
+    "installer":  {
+                      "script":  [
+                                     "$path = \"$dir\\$([System.IO.Path]::GetFileNameWithoutExtension($fname))\"",
+                                     "Move-Item \"$path\\*\" \"$dir\" -Force",
+                                     "Remove-Item \"$path\" -Recurse -Force",
+                                     "reg.exe add \"HKCU\\SOFTWARE\\Microsoft\\EdgeUpdate\\ClientState\\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\" /v \"EBWebView\" /t \"REG_SZ\" /d \"$dir\" /f | Out-Null"
+                                 ]
+                  }
+}
