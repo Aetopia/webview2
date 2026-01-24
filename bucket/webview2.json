@@ -22,7 +22,7 @@
                   "To troubleshoot any issues, visit:",
                   "https://github.com/Aetopia/scoop-webview2#troubleshooting"
               ],
-    "license":  "Freeware",
+    "license":  "Proprietary",
     "homepage":  "https://developer.microsoft.com/microsoft-edge/webview2",
     "pre_install":  "if ($Global) { error; break }",
     "installer":  {

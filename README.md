@@ -1,6 +1,6 @@
 > [!CAUTION]
+> - Don't use this bucket, if you already have WebView2 installed.
 > - This package depends on the fixed versions of Microsoft Edge WebView2.
-> - Don't use this bucket or package, if you already have WebView2 installed.
 
 # Microsoft Edge WebView2 for Scoop 
 

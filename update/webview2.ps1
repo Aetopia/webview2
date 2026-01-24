@@ -64,7 +64,7 @@ $Manifest = @{
         'https://github.com/Aetopia/scoop-webview2#troubleshooting'
     )
     "version"      = $Version 
-    "license"      = "Freeware"
+    "license"      = "Proprietary"
     "homepage"     = "https://developer.microsoft.com/microsoft-edge/webview2"
     "description"  = "Provides a fully portable install of Microsoft Edge WebView2."
     "architecture" = @{
